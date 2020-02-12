@@ -10,7 +10,7 @@ def binary(L,x):
             while L[i] == x and i != 0:
                 f_pos = i
                 i -= 1
-            while L[k] == x and k != 0:
+            while L[k] == x and k != r:
                 l_pos = k
                 k += 1
             print('The first occurrence of the key is at:',f_pos,'\nLast occurrence is at ',l_pos)
