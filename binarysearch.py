@@ -7,7 +7,7 @@ def binary(L,x):
         if L[mid] == x:
             i = mid
             k = mid
-            while L[i] == x and i != 0:
+            while L[i] == x and i >= 0:
                 f_pos = i
                 i -= 1
             while L[k] == x and k != r:
