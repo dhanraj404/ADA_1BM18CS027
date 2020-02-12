@@ -1,7 +1,7 @@
 def binary(L,x):
     L.sort()
     l = 0
-    r = len(L)-1
+    n = r = len(L)-1
     while l <= r:
         mid = int((l+r)/2)
         if L[mid] == x:
@@ -10,9 +10,11 @@ def binary(L,x):
             while L[i] == x and i >= 0:
                 f_pos = i
                 i -= 1
-            while L[k] == x and k != r:
+            while L[k] == x and k != n:
                 l_pos = k
                 k += 1
+            if k == n:
+                l_pos += 1
             print('The first occurrence of the key is at:',f_pos,'\nLast occurrence is at ',l_pos)
             print('Count:',(l_pos-f_pos+1))
             return
