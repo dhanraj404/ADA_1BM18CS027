@@ -1,8 +1,9 @@
 #selection sort
 
-#
 import time
-start = time.process_time()
+import random
+import matplotlib.pyplot as plt
+start_time = time.process_time()
 
 def selection(A):
 	for i in range(len(A)):
@@ -12,7 +13,22 @@ def selection(A):
 				min_index = j
 		A[i],A[min_index] = A[min_index],A[i]
 	print("Sorted Array: \n", A)
+	
+'''
 if __name__ == '__main__':
-	A = list(map(int, input("Enter the array element: ").split()))	
+	A = list(map(int, input("Enter the elements").split()))
 	selection(A)
-	print(time.process_time()-start, 's')
+'''
+if __name__ == '__main__':
+        ti=[]
+        ite=[i for i in range(100)]
+        for i in ite:
+                start_time=time.time()
+                a=random.sample(range(1,i*1000),i)
+                selection(a)
+                timee=(time.time()-start_time)
+                print("SECONDS for ", i,"samples=",timee)
+                ti.append(timee)
+        plt.plot(ite,ti)
+        plt.show()
+

@@ -1,19 +1,23 @@
-#Sort a given set of N integer elements using Bubble Sort technique and compute its time taken. Run the program for different values of N #and record the time taken to sort.
-
-def bubbleSort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1] :
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-if __name__ == '__main__':
-
-	arr = list(map(int, input("Enter the Array Elements :").split()))
-	import time 
-	start = time.process_time() 
-	bubbleSort(arr) 
-	print ("Sorted array is:")
-	for i in range(len(arr)):
-	    print ("%d" %arr[i]),
-	print("Time taken in s:")
-	print(time.process_time() - start)
+import time
+import random
+import matplotlib.pyplot as plt
+def bubble(arr):
+        for i in range(len(arr)):
+                for j in range(0,len(arr)-1-i):
+                        if(arr[j]>arr[j+1]):
+                                t=arr[j]
+                                arr[j]=arr[j+1]
+                                arr[j+1]=t
+        return arr
+if __name__=="__main__":
+        ti=[]
+        ite=[i for i in range(100)]
+        for i in ite:
+                start_time=time.time()
+                a=random.sample(range(1,i*1000),i)
+                arr=bubble(a)
+                timee=(time.time()-start_time)
+                print("SECONDS for ", i,"samples=",timee)
+                ti.append(timee)
+        plt.plot(ite,ti)
+        plt.show()
