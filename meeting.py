@@ -15,14 +15,12 @@ if __name__ == '__main__':
 	resst = [0]*N
 	resf = [0]*N
 	mnum = [0]*N
-	print(S, F, resst, resf, mnum)
 	resst[0] = S[0]
 	resf[0] = F[0]
 	p = 0
 	q = 0
-	print(p, q)
 	mnum[0] = 1
-	for i in range(1, N+1):
+	for i in range(1, N):
 		if S[i]>resf[p]:
 			q += 1
 			p += 1
